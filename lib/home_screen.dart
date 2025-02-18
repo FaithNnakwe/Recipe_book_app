@@ -14,23 +14,28 @@ class _HomeScreenState extends State<HomeScreen> {
       name: 'Avocado with Toast',
       ingredients: ['2 slices of bread', '1 ripe avacado', 'salt and pepper', '1 tsp lemon juice', '2 eggs','Red pepper flakes'],
       instructions: 'Toast bread until golden. Mash avocado with lemon juice, salt, and pepper. Spread on toast and top with eggs. Sprinkle with red pepper flakes.',
+      imageUrl: 'assets/avacado_toast.jpeg',
     ),
     Recipe(
       name: 'Caprese Salad',
       ingredients: ['1 large Tomato, sliced', '½ cup fresh mozzarella, sliced', '¼ cup fresh basil leaves', '1 tbsp olive oil', '1 tbsp balsamic glaze', 'Salt & pepper to taste'],
       instructions: 'Arrange tomato and mozzarella slices on a plate, layering with basil. Drizzle with olive oil and balsamic glaze. Season with salt & pepper.',
+      imageUrl: 'assets/caprese_salad.jpeg',
     ),
     Recipe(name:'Garlic Butter Chicken', 
     ingredients: ['2 chicken breasts', '3 tbsp butter', '4 cloves garlic minced', '1 tsp paprika', '½ tsp salt & pepper', '1 tbsp parsley chopped'],
     instructions: 'Heat 1 tbsp butter in a pan over medium-high heat. Add chicken, season with paprika, salt, and pepper. Cook until golden brown. Add remaining butter and garlic, stirring until fragrant (about 1 min). Garnish with parsley and serve hot.',
+    imageUrl: 'assets/Garlic_butter_chicken.jpeg' 
     ),
     Recipe(name:'Banana oat Pancakes', 
     ingredients: ['1 banana mashed', '1 egg','½ cup oats','½ tsp cinammon', '½ tsp vanilla extract', '1 tbsp honey'],
     instructions: 'Mix all ingredients in a bowl until smooth. Heat a non-stick pan and pour batter to form pancakes. Cook for 2-3 minutes per side until golden. Serve with honey or fresh fruit.',
+    imageUrl: 'assets/Banana_oat_pancake.jpeg',
     ),
     Recipe(name:'Teriyaki Beef Stir-Fry', 
     ingredients: ['Beef strips', '1 tbsp olive oil','1 cup broccoli','1 sliced bell pepper', '¼ cup teriyaki sauce ', '1 tsp sesame seeds'],
     instructions: 'Heat oil in a pan and cook beef until browned. Add broccoli and bell pepper, stir-frying for 3 minutes. Pour in teriyaki sauce, cook for another 2 minutes, and serve with rice.',
+    imageUrl: 'assets/Teriyaki_beef_sauce.jpeg',
     ),
   ];
 
@@ -74,6 +79,15 @@ class _HomeScreenState extends State<HomeScreen> {
         itemBuilder: (context, index) {
           return ListTile(
             tileColor: Colors.white,
+            leading: ClipRRect(
+              borderRadius: BorderRadius.circular(8),
+              child: Image.asset(
+                recipes[index].imageUrl,
+                width:50,
+                height:50,
+                fit: BoxFit.cover,
+              ),
+            ),
             title: Text(recipes[index].name,  
             style: TextStyle(color:Colors.black),
             ),

@@ -6,7 +6,7 @@ class DetailsScreen extends StatefulWidget {
   final bool isFavorite;
   final Function(Recipe) onFavoriteToggle;
 
-  DetailsScreen({
+  DetailsScreen ({
     required this.recipe,
     required this.isFavorite,
     required this.onFavoriteToggle,
