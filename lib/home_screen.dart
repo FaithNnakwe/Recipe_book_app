@@ -11,7 +11,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   List<Recipe> recipes = [
     Recipe(
-      name: 'Avacado with Toast',
+      name: 'Avocado with Toast',
       ingredients: ['2 slices of bread', '1 ripe avacado', 'salt and pepper', '1 tsp lemon juice', '2 eggs','Red pepper flakes'],
       instructions: 'Toast bread until golden. Mash avocado with lemon juice, salt, and pepper. Spread on toast and top with eggs. Sprinkle with red pepper flakes.',
     ),
