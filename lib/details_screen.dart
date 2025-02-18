@@ -35,7 +35,8 @@ class _DetailsScreenState extends State<DetailsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(widget.recipe.name), backgroundColor: Colors.lightBlueAccent,),
+      backgroundColor: Colors.purple,
+      appBar: AppBar(title: Text(widget.recipe.name, style: TextStyle(color: Colors.black),), backgroundColor: Colors.lightBlueAccent,),
       body: Padding(
         padding: EdgeInsets.all(16.0),
         child: Column(

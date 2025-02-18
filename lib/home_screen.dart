@@ -37,8 +37,9 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.purple,
       appBar: AppBar(
-        title: Text("Recipe Book"), backgroundColor: Colors.lightBlueAccent,
+        title: Text("Recipe Book"), backgroundColor: Colors.transparent, elevation: 0,
         actions: [
           TextButton(
             onPressed: () {
@@ -60,7 +61,10 @@ class _HomeScreenState extends State<HomeScreen> {
         itemCount: recipes.length,
         itemBuilder: (context, index) {
           return ListTile(
-            title: Text(recipes[index].name),
+            tileColor: Colors.white,
+            title: Text(recipes[index].name,  
+            style: TextStyle(color:Colors.black),
+            ),
             trailing: Icon(
               favoriteRecipes.contains(recipes[index]) ? Icons.favorite : Icons.favorite_border,
               color: favoriteRecipes.contains(recipes[index]) ? Colors.red : null,

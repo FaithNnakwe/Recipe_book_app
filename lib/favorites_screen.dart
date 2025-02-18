@@ -10,6 +10,7 @@ class FavoritesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.purple,
       appBar: AppBar(title: Text("Favorite Recipes"), backgroundColor: Colors.lightBlueAccent,),
       body: favoriteRecipes.isEmpty
           ? Center(child: Text("No favorite recipes yet!"))
@@ -17,7 +18,9 @@ class FavoritesScreen extends StatelessWidget {
               itemCount: favoriteRecipes.length,
               itemBuilder: (context, index) {
                 return ListTile(
-                  title: Text(favoriteRecipes[index].name),
+                  tileColor: Colors.white,
+                  title: Text(favoriteRecipes[index].name,
+                  style: TextStyle(color:Colors.black),),
                   onTap: () {
                     Navigator.push(
                       context,
