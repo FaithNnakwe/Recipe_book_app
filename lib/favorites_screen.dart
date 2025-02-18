@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'recipe.dart';
 import 'details_screen.dart';
 
 class FavoritesScreen extends StatelessWidget {
@@ -9,7 +10,7 @@ class FavoritesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Favorite Recipes"), backgroundColor: Colors.purpleAccent,),
+      appBar: AppBar(title: Text("Favorite Recipes"), backgroundColor: Colors.lightBlueAccent,),
       body: favoriteRecipes.isEmpty
           ? Center(child: Text("No favorite recipes yet!"))
           : ListView.builder(
@@ -23,8 +24,8 @@ class FavoritesScreen extends StatelessWidget {
                       MaterialPageRoute(
                         builder: (context) => DetailsScreen(
                           recipe: favoriteRecipes[index],
-                           isFavorite: true, // Since it's in the favorites list, set it as true
-                          onFavoriteToggle: (recipe) {}, // No need to toggle here
+                          isFavorite: true,
+                          onFavoriteToggle: (recipe) {},
                         ),
                       ),
                     );

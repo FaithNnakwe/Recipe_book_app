@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
+import 'recipe.dart';
 
 class DetailsScreen extends StatefulWidget {
   final Recipe recipe;
+  final bool isFavorite;
   final Function(Recipe) onFavoriteToggle;
-  final bool isFavorite; // Add this parameter
 
   DetailsScreen({
     required this.recipe,
-    required this.onFavoriteToggle,
     required this.isFavorite,
+    required this.onFavoriteToggle,
   });
 
   @override
@@ -16,46 +17,40 @@ class DetailsScreen extends StatefulWidget {
 }
 
 class _DetailsScreenState extends State<DetailsScreen> {
-  late bool isFavorite; // Local state to track favorite status
+  late bool isFavorite;
 
   @override
   void initState() {
     super.initState();
-    isFavorite = widget.isFavorite; // Initialize with the passed favorite state
+    isFavorite = widget.isFavorite;
   }
 
   void toggleFavorite() {
     setState(() {
-      isFavorite = !isFavorite; // Toggle local favorite state
+      isFavorite = !isFavorite;
     });
-    widget.onFavoriteToggle(widget.recipe); // Notify HomeScreen to update favorite list
+    widget.onFavoriteToggle(widget.recipe);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(widget.recipe.name), backgroundColor: Colors.purpleAccent),
+      appBar: AppBar(title: Text(widget.recipe.name), backgroundColor: Colors.lightBlueAccent,),
       body: Padding(
         padding: EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text("Ingredients:", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-            ...widget.recipe.ingredients.map((ingredient) => Text(ingredient)).toList(),
-            SizedBox(height: 16),
+            ...widget.recipe.ingredients.map((ingredient) => Text("- $ingredient")).toList(),
+            SizedBox(height: 10),
             Text("Instructions:", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
             Text(widget.recipe.instructions),
             SizedBox(height: 20),
-            ElevatedButton(
+            ElevatedButton.icon(
               onPressed: toggleFavorite,
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Icon(isFavorite ? Icons.favorite : Icons.favorite_border, color: Colors.red),
-                  SizedBox(width: 8),
-                  Text(isFavorite ? "Unmark as Favorite" : "Mark as Favorite"),
-                ],
-              ),
+              icon: Icon(isFavorite ? Icons.favorite : Icons.favorite_border),
+              label: Text(isFavorite ? "Unmark Favorite" : "Mark as Favorite"),
             ),
           ],
         ),
@@ -63,5 +58,3 @@ class _DetailsScreenState extends State<DetailsScreen> {
     );
   }
 }
-
-
