@@ -14,8 +14,9 @@ class FavoritesScreen extends StatelessWidget {
       appBar: AppBar(title: Text("Favorite Recipes", style: TextStyle(color:Colors.black),), backgroundColor: Colors.lightBlueAccent,),
       body: favoriteRecipes.isEmpty
           ? Center(child: Text("No favorite recipes yet!", style: TextStyle(color:Colors.black, fontSize: 20),))
-          : ListView.builder(
+          : ListView.separated(
               itemCount: favoriteRecipes.length,
+              separatorBuilder: (context, index) => SizedBox(height: 10,),
               itemBuilder: (context, index) {
                 return ListTile(
                   tileColor: Colors.white,

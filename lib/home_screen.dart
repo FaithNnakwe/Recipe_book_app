@@ -74,8 +74,9 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
-      body: ListView.builder(
+      body: ListView.separated(
         itemCount: recipes.length,
+        separatorBuilder: (context, index) => SizedBox(height: 10),
         itemBuilder: (context, index) {
           return ListTile(
             tileColor: Colors.white,
