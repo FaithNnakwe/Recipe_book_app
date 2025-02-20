@@ -64,6 +64,11 @@ flutter:
      - assets/Banana_oat_pancake.jpeg
      - assets/caprese_salad.jpeg
      - assets/Garlic_butter_chicken.jpeg
+     - assets/beef_bulgogi.jpeg
+     - assets/chapati.jpeg
+     - assets/chicken_pad_thai.jpeg
+     - assets/jollof_rice.jpeg
+     - assets/puff_puff.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
