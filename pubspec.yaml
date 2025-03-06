@@ -68,7 +68,7 @@ flutter:
      - assets/chapati.jpeg
      - assets/chicken_pad_thai.jpeg
      - assets/jollof_rice.jpeg
-     - assets/puff_puff.jpeg
+     - assets/puff_puff.jpegcd
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
